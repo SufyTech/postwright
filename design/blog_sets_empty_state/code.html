@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, initial-scale=1.0">
+  <title>Blog sets (Empty state)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #F4F6F8;
+      color: #1C2430;
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation */
+    header {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #D5DBE3;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+    }
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #1C2430;
+    }
+    .brand-icon {
+      width: 24px;
+      height: 24px;
+      background-color: #1F4E79;
+      color: #FFFFFF;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1;
+    }
+    .brand-name {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #1C2430;
+    }
+
+    /* Main Container */
+    main {
+      padding: 40px 32px 80px 32px;
+    }
+    .content-container {
+      width: 1100px;
+      margin: 0; /* Left aligned */
+    }
+
+    /* Page Header */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .page-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1C2430;
+      letter-spacing: -0.01em;
+    }
+    .btn-primary {
+      background-color: #1F4E79;
+      color: #FFFFFF;
+      border: 1px solid #1F4E79;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid #1F4E79;
+      outline-offset: 2px;
+    }
+    .btn-primary:hover {
+      background-color: #183e60;
+    }
+
+    /* Empty State Container */
+    .empty-state-panel {
+      background-color: #FFFFFF;
+      border: 1px solid #D5DBE3;
+      border-radius: 6px;
+      padding: 72px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .empty-state-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1C2430;
+      margin-bottom: 6px;
+    }
+    .empty-state-subtitle {
+      font-size: 14px;
+      color: #5A6676;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header>
+    <div class="brand-logo-wrap">
+      <div class="brand-icon">P</div>
+      <div class="brand-name">Postwright</div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="content-container">
+      
+      <!-- Page Header & Action -->
+      <div class="page-header">
+        <h1 class="page-title">Blog sets</h1>
+        <button type="button" class="btn-primary">New blog set</button>
+      </div>
+
+      <!-- Empty State Panel -->
+      <div class="empty-state-panel">
+        <h2 class="empty-state-title">No blog sets yet.</h2>
+        <p class="empty-state-subtitle">Create your first one to publish a page for each topic.</p>
+        <button type="button" class="btn-primary">New blog set</button>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

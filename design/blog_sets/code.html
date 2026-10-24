@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, initial-scale=1.0">
+  <title>Blog sets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #F4F6F8;
+      color: #1C2430;
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation */
+    header {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #D5DBE3;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+    }
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #1C2430;
+    }
+    .brand-icon {
+      width: 24px;
+      height: 24px;
+      background-color: #1F4E79;
+      color: #FFFFFF;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1;
+    }
+    .brand-name {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #1C2430;
+    }
+
+    /* Main Container */
+    main {
+      padding: 40px 32px 80px 32px;
+    }
+    .content-container {
+      width: 1100px;
+      margin: 0; /* Left aligned as requested */
+    }
+
+    /* Page Header */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .page-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1C2430;
+      letter-spacing: -0.01em;
+    }
+    .btn-primary {
+      background-color: #1F4E79;
+      color: #FFFFFF;
+      border: 1px solid #1F4E79;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid #1F4E79;
+      outline-offset: 2px;
+    }
+    .btn-primary:hover {
+      background-color: #183e60;
+    }
+
+    /* Table Component */
+    .table-container {
+      background-color: #FFFFFF;
+      border: 1px solid #D5DBE3;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th {
+      font-size: 13px;
+      font-weight: 600;
+      color: #5A6676;
+      background-color: #F8F9FA;
+      padding: 12px 20px;
+      border-bottom: 1px solid #D5DBE3;
+    }
+    td {
+      padding: 16px 20px;
+      font-size: 14px;
+      color: #1C2430;
+      border-bottom: 1px solid #D5DBE3;
+      vertical-align: middle;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Company Cell */
+    .company-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .company-mark {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .company-name {
+      font-weight: 600;
+      color: #1C2430;
+    }
+
+    /* Status indicators */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .status-live .status-dot {
+      background-color: #2E7D32;
+    }
+    .status-live {
+      color: #1C2430;
+    }
+    .status-warning .status-dot {
+      background-color: #D32F2F;
+    }
+    .status-warning {
+      color: #1C2430;
+    }
+
+    /* Action Link */
+    .action-link {
+      color: #1F4E79;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      outline: none;
+      border-radius: 4px;
+    }
+    .action-link:hover {
+      text-decoration: underline;
+    }
+    .action-link:focus-visible {
+      outline: 2px solid #1F4E79;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header>
+    <div class="brand-logo-wrap">
+      <div class="brand-icon">P</div>
+      <div class="brand-name">Postwright</div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="content-container">
+      
+      <!-- Page Title & Primary Action -->
+      <div class="page-header">
+        <h1 class="page-title">Blog sets</h1>
+        <button type="button" class="btn-primary">New blog set</button>
+      </div>
+
+      <!-- Blog Sets Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 38%;">Company</th>
+              <th style="width: 18%;">Topics</th>
+              <th style="width: 20%;">Created</th>
+              <th style="width: 16%;">Status</th>
+              <th style="width: 8%; text-align: right;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="company-cell">
+                  <div class="company-mark" style="background-color: #1F6F8B;">H</div>
+                  <span class="company-name">Harbor Dental Group</span>
+                </div>
+              </td>
+              <td>10 topics</td>
+              <td>24 Oct 2026</td>
+              <td>
+                <span class="status-badge status-live">
+                  <span class="status-dot"></span>
+                  Live
+                </span>
+              </td>
+              <td style="text-align: right;">
+                <a href="#" class="action-link">Open</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="company-cell">
+                  <div class="company-mark" style="background-color: #D96B27;">N</div>
+                  <span class="company-name">Northline Physio</span>
+                </div>
+              </td>
+              <td>8 topics</td>
+              <td>22 Oct 2026</td>
+              <td>
+                <span class="status-badge status-live">
+                  <span class="status-dot"></span>
+                  Live
+                </span>
+              </td>
+              <td style="text-align: right;">
+                <a href="#" class="action-link">Open</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="company-cell">
+                  <div class="company-mark" style="background-color: #2D7D46;">G</div>
+                  <span class="company-name">Greenway Pharmacy</span>
+                </div>
+              </td>
+              <td>10 topics</td>
+              <td>20 Oct 2026</td>
+              <td>
+                <span class="status-badge status-live">
+                  <span class="status-dot"></span>
+                  Live
+                </span>
+              </td>
+              <td style="text-align: right;">
+                <a href="#" class="action-link">Open</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="company-cell">
+                  <div class="company-mark" style="background-color: #5C4B8A;">C</div>
+                  <span class="company-name">Clearview Eye Clinic</span>
+                </div>
+              </td>
+              <td>6 topics</td>
+              <td>19 Oct 2026</td>
+              <td>
+                <span class="status-badge status-warning">
+                  <span class="status-dot"></span>
+                  2 failed
+                </span>
+              </td>
+              <td style="text-align: right;">
+                <a href="#" class="action-link">Open</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
