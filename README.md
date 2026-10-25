@@ -6,8 +6,8 @@ Enter a company name, logo, brand colour and up to 10 topics. Postwright writes 
 
 |                |                                                                                             |
 | -------------- | ------------------------------------------------------------------------------------------- |
-| **Live app**   | `<add Vercel URL>`                                                                          |
-| **Demo video** | `<add video link>`                                                                          |
+| **Live app**   | https://postwright-eight.vercel.app/                                                                          |
+| **Demo video** | https://youtu.be/h-uUwi2cKvM                                                                          |
 | **Stack**      | Next.js 14 (App Router), TypeScript, Tailwind, Supabase (Postgres + Storage), Google Gemini |
 
 ---
